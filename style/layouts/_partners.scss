@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 171px 1fr;
     column-gap: 130px;
-    box-shadow: 0 45px 25px #dceaf11e;
+    box-shadow: $main-shadow;
     &__logo{
         max-width: 100%;
         align-items: center;

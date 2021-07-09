@@ -6,4 +6,53 @@
     width: 100%;
     padding-top: 177px;
     padding-bottom: 118px;
+    &__container{
+        @include element-flex(column, flex-start, center);
+        padding-top: 173px;
+        padding-bottom: 118px;
+    }
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 130px;
+    }
+    &__photo{
+        max-width: 100%;
+        align-self: center;
+        box-shadow: $main-shadow;
+    }
+    &__text{
+        align-self: center;
+        font-size: s;
+        line-height: 25px;
+        height: auto;
+        text-align: left;
+        padding-bottom: 30px;
+        position: relative;
+        &::after{
+            content: '';
+            width: 303px;
+            height: 4px;
+            background: $color-blue;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    &__wrapper.left{
+        .about__text::after{
+            left: 33px;
+        }
+        .about__photo{
+            justify-self: end;
+        }
+        
+    }
+    &__wrapper.right{
+        .about__text::after{
+            right: 33px;
+        }
+        .about__photo{
+            justify-self: start;
+        }
+    }
 }
