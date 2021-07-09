@@ -1,0 +1,13 @@
+.button{
+    padding: 19px 38px;
+    font-size: $font-s;
+    color: $font-dark;
+    font-weight: $font-medium;
+    background: $color-blue;
+    border: none;
+    cursor: pointer;
+    transition: background .2s;
+    &:hover{
+        background: darken($color-blue, 5%);
+    }
+}

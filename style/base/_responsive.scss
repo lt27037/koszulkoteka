@@ -1,0 +1,22 @@
+$screen-d: 1450px;
+$screen-sd: 1240px;
+$screen-sm: 1024px;
+
+
+@mixin desktopWidth {
+	@media screen and (max-width: $screen-d) {
+	  @content;
+	}
+}
+
+@mixin smDesktopWidth {
+	@media screen and (max-width: $screen-sd) {
+	  @content;
+	}
+}
+
+@mixin tabletWidth {
+	@media screen and (max-width: $screen-sm) {
+	  @content;
+	}
+}

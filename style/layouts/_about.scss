@@ -1,0 +1,9 @@
+@import '../base/index';
+
+.about{
+    @include constant-width;
+    @include element-flex(column, flex-start, center);
+    width: 100%;
+    padding-top: 177px;
+    padding-bottom: 118px;
+}

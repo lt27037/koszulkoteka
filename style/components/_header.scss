@@ -1,0 +1,19 @@
+@import '../base/index';
+
+.title{
+    @include main-title;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    &::after{
+        content: '';
+        width: 80%;
+        height: 4px;
+        background: $color-blue;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+}
