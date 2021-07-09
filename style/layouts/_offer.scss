@@ -1,0 +1,41 @@
+@import '../base/index';
+
+.offer{
+    @include constant-width;
+    @include element-flex(column, flex-start, center);
+    width: 100%;
+    padding-top: 118px;
+    padding-bottom: 110px;
+    &__box{
+        @include element-flex(column, center, center);
+        width: 100%;
+        padding: 80px 150px;
+        row-gap: 30px;
+
+    }
+    &__text{
+        text-align: center;
+        line-height: 25px;
+    }
+    &__wrapper{
+        width: 100%;
+        padding: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 116px;
+    }
+    &__item{
+        @include element-flex(column, center, center);
+        width: 100%;
+        padding: 0 calc(50% - 200px);
+        height: 100%;
+        &__picture{
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            box-shadow: $main-shadow;
+            margin-bottom: 55px;
+        }
+    }
+}

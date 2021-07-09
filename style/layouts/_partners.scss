@@ -3,10 +3,10 @@
 .partners{
     width: 100%;
     height: 300px;
-    padding: 50px 170px;
+    padding: 50px calc(50% - 680px);
     display: grid;
     grid-template-columns: 1fr 171px 1fr;
-    column-gap: 130px;
+    column-gap: 5vw;
     box-shadow: $main-shadow;
     &__logo{
         max-width: 100%;
