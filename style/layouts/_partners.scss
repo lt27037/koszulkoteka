@@ -8,6 +8,13 @@
     grid-template-columns: 1fr 171px 1fr;
     column-gap: 5vw;
     box-shadow: $main-shadow;
+    @include desktopWidth{
+        padding: 50px;
+    }
+    @include smDesktopWidth{
+        @include element-flex(column, center, center);
+        height: auto;
+    }
     &__logo{
         max-width: 100%;
         align-items: center;
@@ -17,6 +24,10 @@
         @include element-flex(row, space-between, center);
         align-self: center;
         width: 100%;
+        @include desktopWidth{
+            @include element-flex(column, center, center);
+            row-gap: 70px;
+        }
         &:first-of-type{
             justify-self: end;
         }

@@ -6,11 +6,17 @@
     width: 100%;
     padding-top: 118px;
     padding-bottom: 110px;
+    @include tabletWidth{
+        padding-bottom: 50px;
+    }
     &__box{
         @include element-flex(column, center, center);
         width: 100%;
         padding: 80px 150px;
         row-gap: 30px;
+        @include smDesktopWidth{
+            padding: 50px 30px;
+        }
 
     }
     &__text{
@@ -24,6 +30,9 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: 20px;
         row-gap: 116px;
+        @include tabletWidth{
+            @include element-flex(column, center, center);
+        }
     }
     &__item{
         @include element-flex(column, center, center);

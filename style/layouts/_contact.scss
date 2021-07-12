@@ -1,21 +1,213 @@
-@import '../base//index';
+@import '../base/index';
 
 .contact{
     @include constant-width;
     @include element-flex(column, flex-start, center);
     width: 100%;
+    max-height: 100vh;
     padding-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 250px;
+    @include smDesktopWidth{
+        max-height: unset;
+    }
     &__wrapper{
         width: 100%;
         height: 480px;
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 40% 1fr;
         column-gap: 40px;
+        margin-top: 100px;
+        @include desktopWidth{
+            padding-left: 90px;
+            padding-right: 20px;
+            column-gap: 70px;
+        }
+        @include smDesktopWidth{
+            @include element-flex(column-reverse, center, flex-start);
+            height: auto;
+            padding-left: 60px;
+            padding-right: 20px;
+        }
     }
     &__box{
-        @include element-flex(column, flex-start, flex-start);
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 160px 85px 65px 1fr 25px;
+        align-items: start;
+        justify-items: start;
         width: 100%;
         height: 100%;
+        position: relative;
+        @include phoneWidth{
+            grid-template-rows: auto 85px 65px 1fr 25px;
+        }
+        &.box--background::after{
+            content: '';
+            background: url(../../img/logo/koszulkoteka-logo-footer.svg) no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 688px;
+            height: 688px;
+            position: absolute;
+            bottom: -130px;
+            right: -70px;
+            z-index: -1;
+            @include desktopWidth{
+                width: 550px;
+                height: 550px;
+                right: 0;
+                bottom: -70px;
+            }
+            @include smDesktopWidth{
+                width: 400px;
+                height: 400px;
+                bottom: 0px;
+            }
+            @include tabletWidth{
+                display: none;
+            }
+        }
+    }
+    &__title{
+        font-size: $font-m;
+        color: $font-dark;
+        font-weight: $font-regular;
+        @include smDesktopWidth{
+            font-size: $font-s;
+        }
+        &__big{
+            font-size: $font-xl;
+            color: $font-dark;
+            font-weight: $font-medium;
+            @include smDesktopWidth{
+                font-size: $font-l;
+        }
+            &--blue{
+                color: $color-blue;
+                font-size: $font-xl;
+                font-weight: $font-medium;
+                @include smDesktopWidth{
+                    font-size: $font-l;
+                }
+            }
+        }
+    }
+    &__phone{
+        font-size: $font-xl;
+        color: $font-dark;
+        position: relative;
+        font-weight: $font-medium;
+        @include smDesktopWidth{
+            font-size: $font-l;
+        }
+        &::before{
+            content: '(+48)';
+            font-size: $font-m;
+            font-weight: $font-regular;
+            @include smDesktopWidth{
+                font-size: $font-s;
+            }
+        }
+        &::after{
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: url(../../img/icon/phone-icon.svg) no-repeat;
+            background-position: center;
+            position: absolute;
+            background-size: contain;
+            top: 50%;
+            left: -70px;
+            transform: translateY(-50%);
+            @include smDesktopWidth{
+                left: -40px;
+            }
+        }
+    }
+    &__email{
+        font-size: $font-l;
+        position: relative;
+        @include smDesktopWidth{
+            font-size: $font-m;
+        }
+        &::after{
+            @extend .contact__phone::after;
+            background: url(../../img/icon/email-icon.svg) no-repeat;
+        }
+    }
+    &__time{
+        @include element-flex(column, center, flex-start);
+        position: relative;
+        ::after{
+            @extend .contact__phone::after;
+            background: url(../../img/icon/clock-icon.svg) no-repeat;
+        }
+        span{
+            font-size: $font-m;
+            line-height: 35px;
+        }
+    }
+    &__copyright{
+        font-size: $font-xs;
+        color: $font-lighter;
+        transform: translateX(-70px);
+        @include smDesktopWidth{
+            margin-top: 100px;
+            transform: none;
+        }
+    }
+    &__text{
+        font-size: $font-s;
+        line-height: 25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 130px;
+        @include smDesktopWidth{
+            font-size: $font-xs;
+        }
+        @include phoneWidth{
+            height: auto;
+        }
+    }
+    &__location{
+        font-size: $font-m;
+        position: relative;
+        font-weight: $font-medium;
+        &::after{
+            @extend .contact__phone::after;
+            background: url(../../img/icon/location-icon.svg) no-repeat;
+        }
+    }
+    &__boxWrapper{
+        @include element-flex(row, space-between, flex-end);
+        width: 100%;
+        height: auto;
+        grid-row: 3 / 5;
+        @include smDesktopWidth{
+            @include element-flex(column, center, flex-start);
+            row-gap: 50px;
+        }
+    }
+    &__adress{
+        @include element-flex(column, flex-start, flex-start);
+        span{
+            line-height: 35px;
+            font-size: $font-m;
+        }
+    }
+    &__social{
+        @include element-flex(row, flex-end, center);
+        column-gap: 30px;
+        &__link{
+            padding: 0 12px;
+            cursor: pointer;
+            @include smDesktopWidth{
+                font-size: $font-l;
+                padding: 0;
+            }
+        }
+        &__icon{
+            cursor: pointer;
+        }
     }
 }

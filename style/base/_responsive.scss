@@ -1,6 +1,7 @@
 $screen-d: 1450px;
 $screen-sd: 1240px;
 $screen-sm: 1024px;
+$screen-s: 786px;
 
 
 @mixin desktopWidth {
@@ -17,6 +18,12 @@ $screen-sm: 1024px;
 
 @mixin tabletWidth {
 	@media screen and (max-width: $screen-sm) {
+	  @content;
+	}
+}
+
+@mixin phoneWidth {
+	@media screen and (max-width: $screen-s) {
 	  @content;
 	}
 }

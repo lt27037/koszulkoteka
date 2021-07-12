@@ -17,4 +17,10 @@
         bottom: 0;
         transform: translateX(-50%);
     }
+    @include desktopWidth{
+        font-size: 70px;
+    }
+    @include phoneWidth{
+        font-size: 45px;
+    }
 }

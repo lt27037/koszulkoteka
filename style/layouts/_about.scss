@@ -6,15 +6,24 @@
     width: 100%;
     padding-top: 177px;
     padding-bottom: 118px;
+    @include smDesktopWidth{
+        padding: 50px 30px;
+    }
     &__container{
         @include element-flex(column, flex-start, center);
         padding-top: 173px;
         padding-bottom: 118px;
+        @include tabletWidth{
+            padding: 50px 30px;
+        }
     }
     &__wrapper{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 130px;
+        @include tabletWidth{
+            @include element-flex(column, center, center);
+        }
     }
     &__photo{
         max-width: 100%;
@@ -29,6 +38,13 @@
         text-align: left;
         padding-bottom: 30px;
         position: relative;
+        @include smDesktopWidth{
+            text-align: center;
+            width: 70%;
+        }
+        @include tabletWidth{
+            width: 100%;
+        }
         &::after{
             content: '';
             width: 303px;
@@ -36,6 +52,9 @@
             background: $color-blue;
             position: absolute;
             bottom: 0;
+            @include tabletWidth{
+                display: none;
+            }
         }
     }
     &__wrapper.left{

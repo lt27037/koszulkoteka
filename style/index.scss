@@ -11,4 +11,8 @@
 
 // components
 @import './components/button';
-@import './components/header'
+@import './components/header';
+
+body{
+    overflow-x: hidden;
+}
